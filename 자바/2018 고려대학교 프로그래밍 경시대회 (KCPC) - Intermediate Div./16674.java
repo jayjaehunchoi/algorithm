@@ -58,10 +58,12 @@ public class Baekjun {
 			}
 		}
 		else if (countTwo > 0 || countZero > 0 || countOne > 0 || countEight > 0) {
-				System.out.println(1);
-    }		
+			System.out.println(1);
+  		  }		
 	}
 }
 
-					
+/*
+풀이시간 15분
+*/
 
