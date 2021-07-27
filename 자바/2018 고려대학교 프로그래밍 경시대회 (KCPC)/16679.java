@@ -59,7 +59,7 @@ public class Baekjun {
       // K <= diceSum && (double)((double)minDice/6) > (double)((makeCase) / 6 ;  경우 바꿔서 더 낮을 확률이 높을 때
       // 굳이 안바꾸는 걸로..
       
-			else if(K <= diceSum && (double)(minDice)/6 > (double)((makeCase) / 6) ) {
+			else if(K <= diceSum && (double)(minDice)/6 > (double)((makeCase) / 6) && K > (diceSum - minDice)) {
 				
 				int sixN = (int)Math.pow(6, N);	
 				double p = (double)(makeCase) / 6 ;
