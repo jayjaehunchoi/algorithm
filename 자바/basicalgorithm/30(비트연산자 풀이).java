@@ -21,3 +21,19 @@ class Solution {
         return result;
     }
 }
+
+/*
+
+replace와 replaceAll의 차이점
+
+replaceAll에는 정규식이 들어갈 수 있다.
+
+String str = "aaabbbccccabcddddabcdeeee";
+  
+String result1 = str.replace("abc", "왕");
+String result2 = str.replaceAll("[abc]", "왕");
+
+여기서 replace는 abc 문자열만 왕으로 변경되는 반면
+replaceAll은 [abc] 즉, a or b or c가 모두 왕으로 변경된다.
+
+*/
