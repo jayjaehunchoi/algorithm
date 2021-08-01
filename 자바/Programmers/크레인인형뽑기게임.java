@@ -5,13 +5,12 @@ class Solution {
     	  
     	int answer = 0;
 	    Stack<Integer> stack = new Stack<Integer>();
+	    // stack 자리수 0이면 오류나니까, 뒷편에 isEmpty써줘도 상관은 없음
 	    stack.push(0);
 	    
 	    for(int m : moves) {
 
-	    	
 	    	for(int i = 0 ; i < board.length; i++) {
-	    		
 	    		
 	    		if(board[i][m-1] != 0) {
 	    		
