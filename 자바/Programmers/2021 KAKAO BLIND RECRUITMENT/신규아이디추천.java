@@ -91,3 +91,27 @@ class Solution {
     	return idList;
     }
 }
+
+
+/*
+
+어려운 문제는 아니었다. 하지만 다른사람들 풀이보니까 정규표현식을 사용하여 훨씬 짧고, 시간, 공간복잡도가 낮은 코드로 완성한 것을 볼 수 있었다.
+정규표현식은 특정한 규칙을 가진 문자열을 제대로 입력했는지 검증할 때 주로 사용된다.
+
+Pattern 과 Matcher 클래스가 있다.
+ex ) String patterns = "^[0-9]*$" // 0부터 9까지
+     String val = "12312412513565"
+     Pattern.matches(pattern, val); > bool값으로 보면 true가 나올것이다.
+     
+이외에도 정규식을 활용한 replaceAll이 있다.
+
+String new_id = ".asdqw...123@$#@!%..ADFWz...zcSSDFx%)(^.";
+new_id = new_id.toLowerCase(); // 일단 소문자로 변환
+new_id = new_id.replaceAll("[^-_.a-z0-9]",""); // []내의 값을 제외(^이 []처음에 올때를 제외라고 하는 듯)하고 모두 ""로 변환
+new_id = new_id.replaceAll("^[.]|[.]$", ""); //처음이 [.] 이거나 끝이 [.]이면 ""으로 변환
+new_id = new_id.replaceAll("[.]{2,}", "."); // [.]이 연속 두개 이상인것을 찾아서 .으로 교체
+
+*/
+
+
+
