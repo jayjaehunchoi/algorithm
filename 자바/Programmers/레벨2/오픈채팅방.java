@@ -6,9 +6,9 @@ class Solution {
     public String[] solution(String[] record) {
       
       // 너무 비효율적이지만 떠오르지 않았다.. list두개와 map하나..
-	    	ArrayList<String> names = new ArrayList<String>();
+	ArrayList<String> names = new ArrayList<String>();
 	    
-      ArrayList<String> answerBef = new ArrayList<String>();
+     	ArrayList<String> answerBef = new ArrayList<String>();
 	      /// 해시맵을 통해 id값에따라 변경되는 이름을 조정해준다.
         HashMap<String, String> hMap = new HashMap<String, String>();
 	        
@@ -50,3 +50,7 @@ class Solution {
         return answer;
     }
 }
+
+
+
+
