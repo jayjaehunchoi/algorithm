@@ -37,9 +37,11 @@ class Solution {
     for(int i = 0 ; i < m; i++){
       for(int j = 0 ; j < n ; j++){
         
+        if(pictures[i][j] == 0 && !check[i][j]){
+          
         numberOfArea++;
-        dfs(i,j,picture,check)
-        
+        dfs(i,j,picture,check);
+        }
       if(count > maxSizeOfOneArea) {
         maxSizeOfOneArea = count;
       }
@@ -54,5 +56,5 @@ class Solution {
       
   }
 
-  
+  return answer;
 }
