@@ -10,7 +10,7 @@ class Solution {
   
   public static void dfs(int x, int y, int[][]picture, boolean[][] check){
     
-    if(!check[x][y]){
+    if(check[x][y]){
       return;
     }
     check[x][y] = true;
