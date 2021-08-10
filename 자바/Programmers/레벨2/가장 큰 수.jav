@@ -13,7 +13,7 @@ class Solution {
     	}
     	
       // 정렬을 number[1]+number[2] 와 number[2]+number[1] 비교해서 -가 나오게끔 처리
-      // sgn(x,y) = musth ensure -sgn(y,x); 즉 역순으로 적으면 내림차순이다 -라 이 말씀
+      // sgn(x,y) = must ensure -sgn(y,x); 즉 역순으로 적으면 내림차순이다 -라 이 말씀
      	Arrays.sort(number,new Comparator<String>() {
 
 			@Override
