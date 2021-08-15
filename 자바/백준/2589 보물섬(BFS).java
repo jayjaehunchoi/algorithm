@@ -85,7 +85,7 @@ public class Main {
 				if(map[i][j].equals("L")) {
 					check = new boolean[n][m];
 					// 이것때문에 ;; 몇번 틀림, 자기 자신은 방문처리해줘야한다 꼭..!
-          check[i][j] = true;
+          				check[i][j] = true;
 					bfs(map,i,j);
 					minCnt = Integer.MAX_VALUE;
 					
