@@ -66,8 +66,8 @@ class LRUCache{
       }
       map.put(key, cur);
       
-      if(map.size < capacity){
-        map.remov(tail.key);
+      if(map.size > capacity){
+        map.remove(tail.key);
         tail.prev.next = null;
         tail = tail.prev;
       }
