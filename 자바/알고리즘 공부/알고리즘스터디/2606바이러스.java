@@ -1,58 +1,67 @@
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+
 public class Main {
-	
-	static int[][] node;
-	static boolean[] check;
+
 	static int count = 0;
-
-  public static void bfs(int x) {
+	
+	public static void dfs(int[][] node , int i , boolean[] check) {
 		
-		Queue<Integer> que = new LinkedList<Integer>();
-		que.offer(x);
-		check[x] = true;
-
-    //더이상 추가될 수가 없을때까지..
-		while(!que.isEmpty()) {
-			
-			int number = que.poll();
-			for(int i = 0 ; i < node.length ; i++) {
-				if(node[number][i] == 1 && !check[i]) {
-					count++;
-					que.offer(i);
-					bfs(i);
-				}
+		check[i] = true;
+		
+		for(int j = 0 ; j < node.length ; j++) {
+			if(i != j && node[i][j] == 1 && !check[j]) {
+				count++;
+				dfs(node, j , check);
 			}
-
 		}
+		
 	}
 	
+	public static void bfs(int[][] node , int i , boolean[] check) {
+		
+		Queue<Integer> que = new LinkedList<Integer>();
+		que.offer(i);
+		check[i] = true;
+		
+		while(!que.isEmpty()) {
+			
+			int q = que.poll();
+			for(int j = 0 ; j < node.length ; j++) {
+				if(!check[j] && node[q][j] == 1) {
+					count++;
+					check[j] = true;
+					que.offer(j);
+					
+				}
+			}
+		}
+		
+		
+	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		
-		int N = sc.nextInt();
-		int M = sc.nextInt();
+		int n = sc.nextInt();
+		int m = sc.nextInt();
 		
-    // 7까지의 숫자가 들어가야하기때문에
-    // 배열 크기는 8x8로 설정
-    // 체크도 7까지 해주기 때문에 크기 8로 설정
-		node = new int[N+1][N+1];
-		check = new boolean[N+1];
+		int[][] node = new int[n+1][n+1];
 		
-		for(int i = 0; i < M ; i++) {
+		for(int i = 0; i < m ; i++) {
 			int a = sc.nextInt();
 			int b = sc.nextInt();
 			
-    // 상호연결관계 표시
 			node[a][b] = 1;
 			node[b][a] = 1;
 		}
 		
-		bfs(1);
+		boolean[] check = new boolean[n+1];
+		
+		bfs(node,1,check);
 		System.out.println(count);
-
-	}
+	}	
 }
