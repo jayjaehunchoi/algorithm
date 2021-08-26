@@ -7,7 +7,8 @@ import java.util.Scanner;
 import java.util.Stack;
 
 class Main {
-	
+	// 좌로회전, 우로회전 두가지 규칙이 있기때문에,
+	// 두 규칙을 모두 실행하여 값을 비교하고 최소값으로 계산을 진행한다.
 	static Queue<Integer> que = new LinkedList<Integer>();
 	static Stack<Integer> stack = new Stack<Integer>();
 	static int qCount;
