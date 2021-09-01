@@ -48,3 +48,44 @@ class Solution {
         return answer;
     }
 }
+
+// 시간이 지나서 풀어보니 전혀 다른 풀이..
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.*;
+
+class Solution {
+    public int solution(int[] priorities, int location) {
+        int answer = 0;
+        Queue<Integer> que = new LinkedList<>();
+        int max = 0;
+        for(int i : priorities){
+            que.add(i);
+        }
+        Arrays.sort(priorities);
+        
+        int i = priorities.length-1;
+        while(true){
+            max = priorities[i];
+            if(location == 0 && max == que.peek()){
+                return answer+1;
+            }
+            
+            if(que.peek() == max){
+                que.poll();
+                answer++;
+                location--;
+                i--;
+                    
+            }else if(que.peek() != max){
+                que.add(que.poll());
+                location--;
+            }
+            if(location <0){
+                location = que.size()-1;
+            }
+        }
+
+    }
+}
