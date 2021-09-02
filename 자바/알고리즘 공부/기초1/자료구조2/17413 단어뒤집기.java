@@ -7,7 +7,7 @@ import java.util.*;
 
 
 class Main{
-	  //규칙만 잘 걸어주면 되는 문제
+     //규칙만 잘 걸어주면 되는 문제, 하지만 다른 사람들의 god풀이를 봐버렸다.. (< > 태그 while문 , 일반 단어 뒤집어 출력 메서드 제작 while문)
     // br, bw ,sb로 시간 단축
     public static void main(String[] args) throws IOException{
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
