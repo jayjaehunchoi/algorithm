@@ -3,6 +3,8 @@ import java.util.Collections;
 import java.util.List;
 
 // 10초도 통과시켜주는 프로그래머스 ㅎㅋ
+// + 생각 해보니 end지점들로부터 +1초씩만 해도 똑같이 결과가 나올 것 같아 해보니 end로 부터 1초도 가능하다.
+// 시간도 최대 6초까지 줄었다.
 class Log implements Comparable<Log>{
 	double start;
 	double end;
@@ -26,7 +28,7 @@ class Solution {
         List<Log> aList = makeLogs(lines);
         
         for(int i = 0 ; i < aList.size(); i++) {
-        	answer = Math.max(Math.max(answer, findMax(aList,i)),findMaxEnd(aList, i));
+        	answer = Math.max(answer,findMaxEnd(aList, i));
         }
         return answer;
     }
@@ -51,30 +53,7 @@ class Solution {
     	Collections.sort(aList);
     	return aList;
     }
-  // start지점으로부터 1초
-    public int findMax(List<Log> aList, int idx) {
-    	double start = formatter(aList.get(idx).start);
-    	double end = formatter(start+0.999);
-    	int cnt = 0;
-    	for(int i = 0 ; i < aList.size();i++) {
-    		Log l = aList.get(i);
-    		double s = formatter(l.start);
-    		double e = formatter(l.end);
-    		if(start > end)continue;
-    		if(end < s) {
-    			return cnt;
-    		}
-    		if(s >= start && s <= end) {
-    			cnt++;
-    		}else if(e  >= start && e <= end) {
-    			cnt++;
-    		}else if(s < start && e > end) {
-    			cnt++;
-    		}
-    	}
-    	return cnt;
-    }
-  
+
   // end지점으로부터 1
     public int findMaxEnd(List<Log> aList, int idx) {
     	double start = formatter(aList.get(idx).end);
